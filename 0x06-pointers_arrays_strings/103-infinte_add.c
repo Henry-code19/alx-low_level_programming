@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
+
 /**
  * infinite_add - adds two numbers
  * @n1: number one.
