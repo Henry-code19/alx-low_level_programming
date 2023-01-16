@@ -1,5 +1,5 @@
-#ifndef _SUM_H
-#define _SUM_H
+#ifndef _SUM_MACRO_H_
+#define _SUM_MACRO_H_
 
 /*
  * Author: Henry Djan
@@ -7,6 +7,6 @@
  * sum of the numbers x and y
  */
 
-#define SUM(x, y) ((x) + (y)) 
+#define SUM(x, y) ((x) + (y))
 
 #endif
