@@ -1,29 +1,30 @@
 #include "lists.h"
 
 /**
- * print_listint_safe - prints a linked list, safely
- * @head: list of type listint_t to print
+ * reverse_listint - Reverses a linked list in pladce
+ * @head: Pointer to a pointer pointing to the first item in the list
  *
- * Return: number of nodes in the list
+ * Return: The new head of the reversed list
  */
-size_t print_listint_safe(const listint_t *head)
+listint_t *reverse_listint(listint_t **head)
 {
-	size_t num = 0;
-	long int diff;
+	listint_t *next = NULL, *prev = NULL;
 
-	while (head)
+	if (!head || !*head)
+		return (NULL);
+
+	while ((*head)->next)
 	{
-		diff = head - head->next;
-		num++;
-		printf("[%p] %d\n", (void *)head, head->n);
-		if (diff > 0)
-			head = head->next;
-		else
-		{
-			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
-			break;
-		}
+		next = (*head)->next;
+
+		(*head)->next = prev;
+
+		prev = *head;
+
+		*head = next;
 	}
 
-	return (num);
+	(*head)->next = prev;
+
+	return (*head);
 }
